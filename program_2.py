@@ -9,15 +9,25 @@
 
 def word_separator(sentence):
 
-    new_sentence = ""
-    #    Add your logic here
+    new_sentence = ''
+    new_sentence = new_sentence + sentence[0]
+
+    for i in range (1, len(sentence)):
+        char = sentence[i]
+
+        if char.isupper():
+            char = char.lower()
+            new_sentence = new_sentence + ' '
+
+        new_sentence = new_sentence + char
 
     return new_sentence.strip()
 
 # Example usage
+if __name__ == '__main__':
 
-sentence = "StopAndSmellTheRoses"
+    sentence = input("Input a sentence where all the words are connected (example: StopAndSmellTheRoses) ")
 
 new_sentence = word_separator(sentence)
 
-print(new_sentence)
+print("ADJUSTED SENTENCE:",new_sentence)
